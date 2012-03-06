@@ -1,6 +1,6 @@
 == Diaspora Cluster Manager
 
-[[http://www.vsca.ca/Diaspora/|//Diaspora//]] is a hard science-fiction role-play game based on the [[http://www.faterpg.com/|//FATE//]] system.
+[[http://www.vsca.ca/Diaspora/|//Diaspora//]] is a hard science-fiction role-play game based on the //[[http://www.faterpg.com/|FATE]]// system.
 
 One day you will be able to use this application to create and edit your star cluster, link them, assign their aspect, etcetera. 
 
