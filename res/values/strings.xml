@@ -6,5 +6,6 @@
     <string name="tech">Tech</string>
     <string name="env">Env</string>
     <string name="res">Res</string>
+    <string name="openSystem">Open System</string>
 
 </resources>
