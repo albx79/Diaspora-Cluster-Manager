@@ -19,4 +19,9 @@ public class ROProp<I> extends Observable<PropObserver<? super I>> {
 	public String toString() {
 		return value.toString();
 	}
+	
+	@Override
+	public final boolean equals(Object o) {
+		return o instanceof ROProp && ((ROProp<?>)o).get().equals(value);
+	}
 }

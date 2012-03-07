@@ -1,6 +1,7 @@
 package it.albx79.diaspora.activities;
 
 import it.albx79.diaspora.R;
+import it.albx79.diaspora.models.SystemModel;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +19,15 @@ public class ClustersManager extends Activity {
         b.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getApplicationContext(), SystemViewer.class));
+				SystemModel model = new SystemModel();
+				model.name.set("My First System");
+				model.tech.set(1);
+				model.res.set(2);
+				model.env.set(3);
+				
+				Intent intent = new Intent(getApplicationContext(), SystemViewer.class);
+				// TODO turn model into a bundle and pass it to the intent.
+				startActivity(intent);
 			}
 		});
     }

@@ -16,14 +16,7 @@ public class SystemViewer extends Activity {
 		Intent i = getIntent();
 		SystemModel model = null;
 		if (i.getExtras() != null) {
-			model = (SystemModel)i.getExtras().get("SYSTEM_MODEL");
-		}
-		if (model==null) {
-			model = new SystemModel();
-			model.name.set("My First System");
-			model.tech.set(1);
-			model.res.set(2);
-			model.env.set(3);
+			model = (SystemModel)i.getExtras().get(SystemModel.KEY);
 		}
 		
 		Connector.bind(model.name, (TextView)findViewById(R.id.systemName));
