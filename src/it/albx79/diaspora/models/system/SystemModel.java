@@ -1,5 +1,7 @@
-package it.albx79.diaspora.models;
+package it.albx79.diaspora.models.system;
 
+import it.albx79.diaspora.models.PropObserver;
+import it.albx79.diaspora.models.WProp;
 import android.database.Observable;
 import android.os.Bundle;
 
@@ -15,6 +17,8 @@ import android.os.Bundle;
 public class SystemModel extends Observable<SystemObserver> {
 	/** The string to use as key when putting a SystemModel in an Intent */ 
 	public static final String KEY = "SYSTEM_MODEL";
+	
+	private final SystemBundler bundler = new SystemBundler();
 	
 	public final WProp<Integer> tech = new WProp<Integer>(0);
 	public final WProp<Integer> env = new WProp<Integer>(0);
@@ -32,7 +36,7 @@ public class SystemModel extends Observable<SystemObserver> {
 		tech.registerObserver(new PropObserver<Integer>() {
 			@Override
 			public void onValueChanged(Integer value) {
-				for (SystemObserver o : SystemModel.this.mObservers)
+				for (SystemObserver o : mObservers)
 					o.techChanged(value);
 			} 
 		});
@@ -73,14 +77,14 @@ public class SystemModel extends Observable<SystemObserver> {
 			SystemModel s2 = (SystemModel)o;
 			return s2.env.equals(env) && s2.res.equals(res) && s2.tech.equals(tech) && s2.name.equals(name);
 		}
-		return true;
+		return false;
 	}
 
 	public Bundle toBundle() {
-		return new Bundle();
+		return bundler.bundle(this);
 	}
 
-	public static SystemModel fromBundle(Bundle bundle) {
-		return null;
+	public void readBundle(Bundle bundle) {
+		bundler.unbundle(this, bundle);
 	}
 }

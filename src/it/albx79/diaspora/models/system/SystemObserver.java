@@ -1,4 +1,4 @@
-package it.albx79.diaspora.models;
+package it.albx79.diaspora.models.system;
 
 public interface SystemObserver {
 	public void techChanged(int level);

@@ -2,7 +2,7 @@ package it.albx79.diaspora.activities;
 
 import it.albx79.diaspora.R;
 import it.albx79.diaspora.controllers.Connector;
-import it.albx79.diaspora.models.SystemModel;
+import it.albx79.diaspora.models.system.SystemModel;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
