@@ -3,12 +3,12 @@ package it.albx79.diaspora.activities;
 import it.albx79.diaspora.R;
 import it.albx79.diaspora.controllers.Connector;
 import it.albx79.diaspora.models.system.SystemModel;
-import android.app.Activity;
+import roboguice.activity.RoboActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class SystemViewer extends Activity {
+public class SystemViewer extends RoboActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
