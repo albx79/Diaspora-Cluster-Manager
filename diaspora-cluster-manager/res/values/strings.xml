@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ClustersManager!</string>
+    <string name="app_name">Diaspora Cluster Manager</string>
+    <string name="tech">Tech</string>
+    <string name="env">Env</string>
+    <string name="res">Res</string>
+    <string name="openSystem">Open System</string>
+    <string name="cluster_name">Cluster Name</string>
+    <string name="system_name">System Name</string>
+
+</resources>
