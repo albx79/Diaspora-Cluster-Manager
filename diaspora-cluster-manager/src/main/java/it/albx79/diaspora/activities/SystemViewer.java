@@ -1,6 +1,7 @@
 package it.albx79.diaspora.activities;
 
 import it.albx79.diaspora.R;
+import it.albx79.diaspora.controllers.Connector;
 import it.albx79.diaspora.models.system.SystemModel;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
@@ -16,11 +17,10 @@ public class SystemViewer extends RoboActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.system_view);
 		Intent i = getIntent();
-		SystemModel model = null;
-		if (i.getExtras() != null) {
-			model = (SystemModel)i.getExtras().get(SystemModel.KEY);
-		}
-		systemName.setText("TODO deserialise model");
+		SystemModel model = new SystemModel();
+		Bundle extras = i.getExtras();
+		if (extras != null)
+			model.readBundle(extras);
 //		Connector.bind(model.name, systemName);
 	}
 
