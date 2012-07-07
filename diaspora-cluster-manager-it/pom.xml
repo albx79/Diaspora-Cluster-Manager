@@ -9,9 +9,7 @@
         <version>0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>it.albx79.diaspora</groupId>
     <artifactId>diaspora-cluster-manager-it-it</artifactId>
-    <version>0.1-SNAPSHOT</version>
     <packaging>apk</packaging>
     <name>diaspora-cluster-manager-it - Integration tests</name>
 
@@ -39,6 +37,11 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>compile</scope>
+        </dependency>
+	    <dependency>
+		    <groupId>com.pivotallabs</groupId>
+		    <artifactId>robolectric</artifactId>
         </dependency>
     </dependencies>
     <build>

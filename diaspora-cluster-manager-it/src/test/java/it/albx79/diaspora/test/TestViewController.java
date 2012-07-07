@@ -1,16 +1,17 @@
 package it.albx79.diaspora.test;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import com.xtremelabs.robolectric.RobolectricTestRunner;
-
-import junit.framework.Assert;
 import it.albx79.diaspora.activities.ClustersManager;
 import it.albx79.diaspora.controllers.Connector;
 import it.albx79.diaspora.models.WProp;
+import junit.framework.Assert;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.TextView;
+
+import com.xtremelabs.robolectric.RobolectricTestRunner;
 
 @RunWith(RobolectricTestRunner.class)
 public class TestViewController extends ActivityInstrumentationTestCase2<ClustersManager> {

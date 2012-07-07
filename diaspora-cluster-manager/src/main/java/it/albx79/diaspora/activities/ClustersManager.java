@@ -6,11 +6,14 @@ import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class ClustersManager extends RoboActivity {
+	protected static final String TAG = "ClustersManager";
+	
 	@InjectView(R.id.openSystemBtn) Button openSystem;
 	
     /** Called when the activity is first created. */
@@ -30,7 +33,9 @@ public class ClustersManager extends RoboActivity {
 				Intent intent = new Intent(getApplicationContext(), SystemViewer.class);
 				Bundle bundle = model.toBundle();
 				intent.putExtras(bundle);
+				Log.i(TAG, "created bundle; starting activity SystemViewer");
 				startActivity(intent);
+				Log.i(TAG, "activity started");
 			}
 		});
     }

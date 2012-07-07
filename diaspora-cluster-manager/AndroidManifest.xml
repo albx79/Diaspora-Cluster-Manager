@@ -9,6 +9,10 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    
+    <activity android:name="it.albx79.diaspora.activities.SystemViewer">
+    </activity>
+    
   </application>
 
 </manifest>
