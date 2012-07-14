@@ -1,9 +1,8 @@
 package it.albx79.diaspora.models.system;
 
-import it.albx79.diaspora.models.Observable;
+import it.albx79.diaspora.models.NonNullStringProp;
 import it.albx79.diaspora.models.PropObserver;
 import it.albx79.diaspora.models.Property;
-import it.albx79.diaspora.models.ROProp;
 import it.albx79.diaspora.models.WProp;
 import android.os.Bundle;
 
@@ -25,14 +24,7 @@ public class SystemModel extends Property<SystemObserver> {
 	public final WProp<Integer> tech = new WProp<Integer>(0);
 	public final WProp<Integer> env = new WProp<Integer>(0);
 	public final WProp<Integer> res = new WProp<Integer>(0);
-	public final WProp<String> name = new WProp<String>("") {
-		@Override
-		public boolean set(String value) {
-			if (value == null)
-				throw new NullPointerException("System name cannot be null");
-			return super.set(value);
-		};
-	};
+	public final WProp<String> name = new NonNullStringProp("");
 
 	public SystemModel() {
 		tech.addObserver(new PropObserver<Integer>() {

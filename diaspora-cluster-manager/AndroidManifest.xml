@@ -12,8 +12,8 @@
       </intent-filter>
     </activity>
     
-    <activity android:name="it.albx79.diaspora.activities.SystemViewer">
-    </activity>
+    <activity android:name="it.albx79.diaspora.activities.SystemViewer"/>
+    <activity android:name="it.albx79.diaspora.activities.ClusterViewer"/>
     
   </application>
 
