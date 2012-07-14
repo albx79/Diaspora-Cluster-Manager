@@ -2,13 +2,12 @@ package it.albx79.diaspora.test;
 
 import it.albx79.diaspora.models.ListObserver;
 import it.albx79.diaspora.models.ListProp;
+import junit.framework.TestCase;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import com.xtremelabs.robolectric.RobolectricTestRunner;
-
-import junit.framework.TestCase;
 
 @RunWith(RobolectricTestRunner.class)
 public class TestListProperty extends TestCase {
