@@ -38,6 +38,17 @@
                 <version>${platform.version}</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+				<groupId>com.j256.ormlite</groupId>
+				<artifactId>ormlite-core</artifactId>
+				<version>4.41</version>
+			</dependency>
+			<dependency>
+				<groupId>com.j256.ormlite</groupId>
+				<artifactId>ormlite-android</artifactId>
+				<version>4.41</version>
+			</dependency>
+			                        
 
             <!-- Androlog is a logging and reporting library for Android -->
             <dependency>

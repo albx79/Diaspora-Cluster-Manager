@@ -1,5 +1,6 @@
 package it.albx79.diaspora.models.system;
 
+import it.albx79.diaspora.models.Bundleable;
 import it.albx79.diaspora.models.NonNullStringProp;
 import it.albx79.diaspora.models.PropObserver;
 import it.albx79.diaspora.models.Property;
@@ -15,15 +16,18 @@ import android.os.Bundle;
  * @author albx
  * 
  */
-public class SystemModel extends Property<SystemObserver> {
+public class SystemModel extends Property<SystemObserver> implements Bundleable {
 	/** The string to use as key when putting a SystemModel in an Intent */ 
 	public static final String KEY = "SYSTEM_MODEL";
 	
 	private final SystemBundler bundler = new SystemBundler();
 	
 	public final WProp<Integer> tech = new WProp<Integer>(0);
+
 	public final WProp<Integer> env = new WProp<Integer>(0);
+	
 	public final WProp<Integer> res = new WProp<Integer>(0);
+
 	public final WProp<String> name = new NonNullStringProp("");
 
 	public SystemModel() {
@@ -74,10 +78,12 @@ public class SystemModel extends Property<SystemObserver> {
 		return false;
 	}
 
+	@Override
 	public Bundle toBundle() {
 		return bundler.bundle(this);
 	}
 
+	@Override
 	public void readBundle(Bundle bundle) {
 		bundler.unbundle(this, bundle);
 	}

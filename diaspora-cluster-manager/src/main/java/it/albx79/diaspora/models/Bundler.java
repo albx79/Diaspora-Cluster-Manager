@@ -13,7 +13,7 @@ import android.os.Bundle;
 public interface Bundler<T> {
 	/**
 	 * Creates a new bundle containing the state of {@code model}, so that it
-	 * can be reconstracted from the bundle.
+	 * can be reconstructed from the bundle.
 	 * 
 	 * @param model
 	 * @return

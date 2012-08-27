@@ -1,7 +1,6 @@
 package it.albx79.diaspora.activities;
 
 import it.albx79.diaspora.R;
-import it.albx79.diaspora.models.system.SystemModel;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
 import android.content.Intent;
@@ -24,15 +23,16 @@ public class ClustersManager extends RoboActivity {
         openSystem.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				SystemModel model = new SystemModel();
-				model.name.set("My First System");
-				model.tech.set(1);
-				model.res.set(2);
-				model.env.set(3);
+//				SystemModel model = new SystemModel();
+//				model.name.set("My First System");
+//				model.tech.set(1);
+//				model.res.set(2);
+//				model.env.set(3);
 				
 				Intent intent = new Intent(getApplicationContext(), SystemViewer.class);
-				Bundle bundle = model.toBundle();
-				intent.putExtras(bundle);
+//				Bundle bundle = model.toBundle();
+//				intent.putExtras(bundle);
+				intent.putExtra("system", "my first system");
 				Log.i(TAG, "created bundle; starting activity SystemViewer");
 				startActivity(intent);
 				Log.i(TAG, "activity started");
