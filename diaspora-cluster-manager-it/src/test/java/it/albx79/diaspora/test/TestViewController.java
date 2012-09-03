@@ -8,6 +8,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import android.os.Bundle;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.TextView;
 
@@ -39,6 +40,11 @@ public class TestViewController extends ActivityInstrumentationTestCase2<Cluster
 		bindPropertyWithView();
 		prop.set(ANOTHER_STRING);
 		Assert.assertEquals(ANOTHER_STRING, textView.getText());
+	}
+	
+	@Test
+	public void test_that_can_launch_activity_with_intent() {
+		launchActivity("it.albx79.diaspora", ClustersManager.class, new Bundle());
 	}
 
 	private void bindPropertyWithView() {
