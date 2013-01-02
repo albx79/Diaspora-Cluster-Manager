@@ -9,5 +9,6 @@
     <string name="cluster_name">Cluster Name</string>
     <string name="system_name">System Name</string>
     <string name="edit">Edit</string>
+    <string name="add_cluster">Add cluster</string>
 
 </resources>
