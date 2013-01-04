@@ -1,25 +1,24 @@
 package it.albx79.diaspora.activities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import it.albx79.diaspora.R;
 import it.albx79.diaspora.daos.DatabaseManager;
 import it.albx79.diaspora.models.cluster.ClusterEntity;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * List all known clusters of the Universe.
@@ -36,7 +35,6 @@ public class ClustersManager extends RoboActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DatabaseManager.init(this);
         setContentView(R.layout.main);
         setupButton(btn);
     }
@@ -46,7 +44,7 @@ public class ClustersManager extends RoboActivity {
         btn.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(activity, ClusterViewer.class);
-                startActivity (intent);
+                startActivity(intent);
             }
         });
     }
@@ -54,6 +52,7 @@ public class ClustersManager extends RoboActivity {
     @Override
     protected void onStart() {
     	super.onStart();
+    	DatabaseManager.init(this);
     	setupListView(listView);
     }
     

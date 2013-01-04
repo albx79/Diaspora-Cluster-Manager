@@ -39,7 +39,7 @@ public class DatabaseManager {
         try {
             return getHelper().getClusterDao().queryForAll();
         } catch (SQLException e) {
-        	Log.e(TAG, e.getMessage());
+        	logError(e);
             return Collections.emptyList();
         }
     }
@@ -49,8 +49,21 @@ public class DatabaseManager {
 			Dao<ClusterEntity, String> clusterDao = getHelper().getClusterDao();
 			return clusterDao.queryForId(clusterName);
 		} catch (SQLException e) {
-			Log.e(TAG, e.getMessage());
+			logError(e);
 			return null;
+		}
+	}
+
+	private void logError(SQLException e) {
+		Log.e(TAG, e.getMessage());
+	}
+
+	public void updateCluster(ClusterEntity cluster) {
+		try {
+			Dao<ClusterEntity,String> dao = getHelper().getClusterDao();
+			dao.update(cluster);
+		} catch (SQLException e) {
+			logError(e);
 		}
 	}
 }

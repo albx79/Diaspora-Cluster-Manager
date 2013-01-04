@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
     <TextView
         android:id="@+id/clusterName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Large Text"
+        android:text="@+id/clusterName"
+        android:layout_alignParentTop="true"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/clusterAspect"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Medium Text"
+        android:layout_below="@+id/clusterName"
+        android:text="@+id/clusterAspect"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <ScrollView
-        android:id="@+id/scrollView1"
+    <ListView
+        android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:scrollbars="vertical" >
+        android:layout_above="@+id/cluster_view_toolbar"
+        android:layout_below="@+id/clusterAspect" >
+    </ListView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <ListView
-                android:id="@+id/listView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-            </ListView>
-
-            <ToggleButton
-                android:id="@+id/clusterEditToggle"
+    <LinearLayout
+        android:id="@+id/cluster_view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+        
+            <Button
+                android:id="@+id/btn_cluster_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/edit" />
+                android:layout_weight="0.5"
+                android:text="@string/back" />
 
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+            <Button
+                android:id="@+id/btn_cluster_revert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/revert" />
+        
+    </LinearLayout>
+</RelativeLayout>

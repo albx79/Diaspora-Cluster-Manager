@@ -10,5 +10,8 @@
     <string name="system_name">System Name</string>
     <string name="edit">Edit</string>
     <string name="add_cluster">Add cluster</string>
+    <string name="back">Back</string>
+    <string name="revert">Revert</string>
+    <string name="cluster_aspect">Cluster aspect</string>
 
 </resources>
