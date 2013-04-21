@@ -22,4 +22,9 @@ target
 .classpath
 dist
 .project
+*.iml
+*/*.iml
+.idea
+*~
 gen/it/albx79/diaspora/R.java
+
